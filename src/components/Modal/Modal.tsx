@@ -47,10 +47,13 @@ export default function CustomModal({isOpen, onOpen, onOpenChange, text}: Custom
                 confetti.className = 'confetti ' + SHAPES[Math.floor(Math.random() * 3)];
                 confetti.style.width = `${size}px`
                 confetti.style.height = `${size}px`
-                confetti.style.backgroundColor = generateRandomColor();            // Append confetti to the container
+                confetti.style.backgroundColor = generateRandomColor(); 
+                           // @ts-ignore
                 container.appendChild(confetti);            
                 // Remove confetti element after animation duration (4 seconds)
                 setTimeout(() => {
+                           // @ts-ignore
+
                     container.removeChild(confetti);
                 }, 10000);
             }
