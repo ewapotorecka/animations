@@ -13,7 +13,7 @@ export default function Home() {
         onOpenChange={onOpenChange}
         text={"Hey keep your hands to yourself"}
       />
-      <div className="flex gap-16">
+      <div className="flex gap-8  lg:gap-16">
         <motion.div
           animate={{ rotate: 1440, scale: 4 }}
           transition={{ ease: "easeOut", duration: 4 }}
