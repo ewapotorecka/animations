@@ -10,7 +10,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <CustomModal
         isOpen={isOpen}
-        onOpen={onOpen}
         onOpenChange={onOpenChange}
         text={"Hey keep your hands to yourself"}
       />
