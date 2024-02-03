@@ -7,21 +7,27 @@ import Mushroom from "../icons/mushroom";
 
 import Pill from "../icons/pill";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const Nav = () => {
+  const router = useRouter();
   return (
-    <div className="flex gap-2 p-4 w-full items-center justify-center">
+    <div className="flex  gap-2 p-4 w-full items-center justify-between">
       <motion.div
         whileHover={{
           opacity: 0.1,
           transition: { duration: 0.2 },
         }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ 
+          opacity: 0.1,
+          transition: { duration: 0.2 },
+         }}
       >
         <Button
           isIconOnly
           aria-label="Like"
-          className="bg-gradient-to-tr from-pink-500 to-[#E1F2FE] text-white shadow-lg w-60"
+          className="bg-gradient-to-tr from-pink-500 to-[#E1F2FE] text-white shadow-lg "
+          onClick={() => router.push("/")}
         >
           <div className="w-10 h-10">
             <Rainbow />
@@ -33,12 +39,16 @@ const Nav = () => {
           opacity: 0.1,
           transition: { duration: 0.2 },
         }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ 
+          opacity: 0.1,
+          transition: { duration: 0.2 },
+         }}
       >
         <Button
           isIconOnly
           aria-label="Like"
-          className="bg-gradient-to-tr from-[#CDC1FF] to-[#1E91D6] text-white shadow-lg w-60"
+          className="bg-gradient-to-tr from-[#CDC1FF] to-[#1E91D6] text-white shadow-lg "
+          onClick={() => router.push("/shroom")}
         >
           <div className="w-10 h-10">
             <Mushroom />
@@ -51,12 +61,15 @@ const Nav = () => {
           opacity: 0.1,
           transition: { duration: 0.2 },
         }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ 
+          opacity: 0.1,
+          transition: { duration: 0.2 },
+         }}
       >
         <Button
           isIconOnly
           aria-label="Like"
-          className="bg-gradient-to-tr from-[#B2B1CF] to-[#27FB6B]  shadow-lg w-60"
+          className="bg-gradient-to-tr from-[#B2B1CF] to-[#27FB6B]  shadow-lg "
         >
           <div className="w-10 h-10">
             <Pill />
