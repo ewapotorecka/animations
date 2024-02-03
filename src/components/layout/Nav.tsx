@@ -47,7 +47,7 @@ const Nav = () => {
           isIconOnly
           aria-label="Like"
           className="bg-gradient-to-tr from-[#CDC1FF] to-[#D63AF9] text-white shadow-lg "
-        
+          onClick={() => router.push("/not-today")}
         >
           <div className="w-8 h-8">
           <Plane/>
