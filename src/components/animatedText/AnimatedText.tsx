@@ -19,12 +19,12 @@ const AnimatedText: FC<Props> = ({
 
   const container: Variants = {
     hidden: {
-      opacity: 0
+      opacity: 0,
     },
     visible: (i: number = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: duration, delayChildren: i * delay }
-    })
+      transition: { staggerChildren: duration, delayChildren: i * delay },
+    }),
   };
 
   const child: Variants = {
@@ -34,8 +34,8 @@ const AnimatedText: FC<Props> = ({
       transition: {
         type: "spring",
         damping: 12,
-        stiffness: 200
-      }
+        stiffness: 200,
+      },
     },
     hidden: {
       opacity: 0,
@@ -43,14 +43,14 @@ const AnimatedText: FC<Props> = ({
       transition: {
         type: "spring",
         damping: 12,
-        stiffness: 200
-      }
-    }
+        stiffness: 200,
+      },
+    },
   };
 
   return (
     <motion.h1
-      style={{ display: "flex", overflow: "hidden", fontSize: "2rem"}}
+      style={{ display: "flex", overflow: "hidden", fontSize: "2rem" }}
       variants={container}
       initial="hidden"
       animate={replay ? "visible" : "hidden"}
