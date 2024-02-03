@@ -1,4 +1,5 @@
 "use client";
+
 import AnimatedText from "@/components/AnimatedText/AnimatedText";
 
 
