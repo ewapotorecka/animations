@@ -6,9 +6,6 @@ const Rainbow = () => (
     id="Icons"
     x={0}
     y={0}
-    style={{
-      enableBackground: "new 0 0 32 32",
-    }}
     viewBox="0 0 32 32"
   >
     <style>
