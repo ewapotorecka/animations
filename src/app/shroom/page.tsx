@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedText from "@/components/AnimatedText/AnimatedText";
+import AnimatedText from "@/components/animatedText/AnimatedText";
 
 
 export default function Shroom() {
