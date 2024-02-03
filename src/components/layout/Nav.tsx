@@ -1,17 +1,64 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
+import { Button, Switch } from "@nextui-org/react";
+import Image from "next/image";
+import Moon from "../../../public/moon.png";
+import Sun from "../../../public/sun.png";
 
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 import Plane from "../icons/plane";
+import { useEffect, useState } from "react";
 
 
 const Nav = () => {
   const router = useRouter();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [effect, setEffect] = useState('');
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+
+    const effects = ['rotate', 'flip'];
+    const randomEffect = effects[Math.floor(Math.random() * effects.length)];
+    setEffect(randomEffect);
+  };
+
+  useEffect(() => {
+
+    switch (effect) {
+      case 'rotate':
+        document.body.style.transform = 'rotate(180deg)';
+        document.body.style.transition = 'transform 0.5s';
+        break;
+      case 'flip':
+        document.body.style.transform = 'scaleX(-1)';
+        document.body.style.transition = 'transform 0.5s';
+        break;
+      
+        break;
+      default:
+        document.body.style.transform = 'none';
+    }
+  }, [isDarkMode, effect]);
+
   return (
     <div className="flex  gap-2 p-4 w-full items-center justify-between">
+         <Switch
+      defaultSelected
+      onChange={toggleTheme}
+      size="lg"
+      color="warning"
+      thumbIcon={({ isSelected, className }) =>
+        isSelected ? (
+         <Image src={Sun} alt="sun"/>
+        ) : (
+          <Image src={Moon} alt="moon"/>
+        )
+      }
+    />
+  
       <motion.div
         whileHover={{
           opacity: 0.1,
