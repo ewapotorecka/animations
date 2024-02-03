@@ -1,6 +1,6 @@
 "use client";
-import AnimatedText from "@/components/animatedText/AnimatedText";
-import { motion } from "framer-motion";
+import AnimatedText from "@/components/AnimatedText/AnimatedText";
+
 
 export default function Shroom() {
   return (
