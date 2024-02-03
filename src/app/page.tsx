@@ -1,15 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import { useDisclosure } from "@nextui-org/react";
 import CustomModal from "@/components/Modal/Modal";
 
-
 export default function Home() {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <CustomModal isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} text={"Hey keep your hands to yourself"}/>
+      <CustomModal
+        isOpen={isOpen}
+        onOpen={onOpen}
+        onOpenChange={onOpenChange}
+        text={"Hey keep your hands to yourself"}
+      />
       <div className="flex gap-16">
         <motion.div
           animate={{ rotate: 1440, scale: 4 }}
@@ -33,6 +37,7 @@ export default function Home() {
             transition: { duration: 0.4 },
           }}
           drag={true}
+          onClick={onOpen}
         >
           <h1 className="cursor-pointer text-4xl font-black bg-gradient-to-r from-[#F092DD] via-[#2D7DD2] to-[#BCE784] text-transparent bg-clip-text">
             N
@@ -60,6 +65,7 @@ export default function Home() {
             transition: { duration: 0.2 },
           }}
           drag={true}
+          onClick={onOpen}
         >
           <h1 className="cursor-pointer text-4xl font-black bg-gradient-to-r from-[#F092DD] via-[#2D7DD2] to-[#BCE784] text-transparent bg-clip-text">
             O
@@ -74,6 +80,7 @@ export default function Home() {
             transition: { duration: 0.2 },
           }}
           drag={true}
+          onClick={onOpen}
         >
           <h1 className="cursor-pointer text-4xl font-black bg-gradient-to-r from-[#F092DD] via-[#2D7DD2] to-[#BCE784] text-transparent bg-clip-text">
             Y

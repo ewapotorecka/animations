@@ -18,10 +18,10 @@ const Nav = () => {
           opacity: 0.1,
           transition: { duration: 0.2 },
         }}
-        whileTap={{ 
+        whileTap={{
           opacity: 0.1,
           transition: { duration: 0.2 },
-         }}
+        }}
       >
         <Button
           isIconOnly
@@ -39,10 +39,10 @@ const Nav = () => {
           opacity: 0.1,
           transition: { duration: 0.2 },
         }}
-        whileTap={{ 
+        whileTap={{
           opacity: 0.1,
           transition: { duration: 0.2 },
-         }}
+        }}
       >
         <Button
           isIconOnly
@@ -61,10 +61,10 @@ const Nav = () => {
           opacity: 0.1,
           transition: { duration: 0.2 },
         }}
-        whileTap={{ 
+        whileTap={{
           opacity: 0.1,
           transition: { duration: 0.2 },
-         }}
+        }}
       >
         <Button
           isIconOnly
