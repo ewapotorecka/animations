@@ -116,6 +116,8 @@ const Nav = () => {
           isIconOnly
           aria-label="Like"
           className="bg-gradient-to-tr from-[#5C95FF] to-[#B5D8CC]  shadow-lg "
+          onClick={() => router.push("/parallax")}
+
         >
           <div className="w-10 h-10">
           <Plane/>
