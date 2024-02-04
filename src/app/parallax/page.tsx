@@ -5,22 +5,6 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 
-const vertical = "2/3";
-const horizontal = "3/2";
-
-export const londonPhotosMetadata = [
-  { aspectRatio: horizontal },
-  { aspectRatio: vertical },
-  { aspectRatio: horizontal },
-  { aspectRatio: vertical },
-  { aspectRatio: vertical },
-  { aspectRatio: vertical },
-  { aspectRatio: horizontal },
-  { aspectRatio: vertical },
-  { aspectRatio: horizontal }
-];
-
-
 
 export default function Parallax() {
 const router = useRouter();
