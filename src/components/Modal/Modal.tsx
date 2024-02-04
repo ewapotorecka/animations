@@ -25,12 +25,12 @@ export default function CustomModal({
   const [isConfettiActive, setConfettiActive] = useState(false);
   const { width, height } = useWindowSize();
   const [colors, setColors] = useState([
-    "bg-[#09814A]",
-    "bg-[#F90093]",
-    "bg-[#8B80F9]",
-    "bg-[#2AFC98]",
-    "bg-[#340068]",
-    "bg-[#FFD639]",
+    "border-4 border-[#09814A]",
+    "border-4 border-[#F90093]",
+    "border-4 border-[#8B80F9]",
+    "border-4 border-[#2AFC98]",
+    "border-4 border-[#340068]",
+    "border-4 border-[#FFD639]",
   ]);
 
   const shuffleColors = () => {
@@ -86,7 +86,7 @@ export default function CustomModal({
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1 text-[#F61067]">
+              <ModalHeader className="flex flex-col gap-1 text-black text-center">
                 {text}
               </ModalHeader>
 

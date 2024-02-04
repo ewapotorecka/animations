@@ -1,48 +1,47 @@
-'use client'
+// Photos from https://citizenofnowhe.re/lines-of-the-city
+import "./styles.css";
+import { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue
+} from "framer-motion";
 
-import { motion, useIsPresent, useScroll, useSpring } from "framer-motion";
-import { Image } from "./image/Image";
-
-
-
-interface Props {
-  alt: string;
-  category: string;
-  title: string;
-  titleWidth: number;
-  photos: string[];
+function useParallax(value: MotionValue<number>, distance: number) {
+  return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-export function Gallery({ category, alt, title, titleWidth, photos }: Props) {
-    const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, {
-      stiffness: 100,
-      damping: 30,
-      restDelta: 0.001
-    });
-    const isPresent = useIsPresent();
-  
-    return (
-      <article className="flex">
-   
-        {photos.map((image, index) => (
-          <Image
-         src={image}
-            index={index + 1}
-            alt={alt}
-          
-            key={index}
-          />
-        ))}
-        <motion.div className="progress" style={{ scaleX }} />
-       
-        <motion.div
-          initial={{ scaleX: 1 }}
-          animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
-          exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
-          style={{ originX: isPresent ? 0 : 1 }}
-          className="privacy-screen"
-        />
-      </article>
-    );
-  }
+function Image({ id }: { id: number }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
+
+  return (
+    <section>
+      <div ref={ref}>
+        <img src={`/${id}.jpg`} alt="A London skyscraper" />
+      </div>
+      <motion.h2 style={{ y }}>{`#00${id}`}</motion.h2>
+    </section>
+  );
+}
+
+export default function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  return (
+    <>
+      {[1, 2, 3, 4, 5].map((image) => (
+        <Image id={image} key={image} />
+      ))}
+      <motion.div className="progress" style={{ scaleX }} />
+    </>
+  );
+}

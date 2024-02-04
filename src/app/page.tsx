@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useDisclosure } from "@nextui-org/react";
 import CustomModal from "@/components/Modal/Modal";
 
-
 export default function Home() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
@@ -12,10 +11,9 @@ export default function Home() {
       <CustomModal
         isOpen={isOpen}
         onOpenChange={onOpenChange}
-        text={"Hey keep your hands to yourself"}
+        text={"KEEP YOUR HANDS TO YOURSELF"}
       />
       <div className="flex gap-8  lg:gap-16">
-     
         <motion.div
           animate={{ rotate: 1440, scale: 4 }}
           transition={{ ease: "easeOut", duration: 4 }}

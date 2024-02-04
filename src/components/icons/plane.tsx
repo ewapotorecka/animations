@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 const Plane = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +6,6 @@ const Plane = () => (
     width={24}
     height={24}
     fill="none"
- 
   >
     <path fill="url(#a)" d="M0 0h24v24H0z" />
     <defs>
@@ -26,5 +25,5 @@ const Plane = () => (
       />
     </defs>
   </svg>
-)
-export default Plane
+);
+export default Plane;
