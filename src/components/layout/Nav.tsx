@@ -135,6 +135,8 @@ const Nav = () => {
           isIconOnly
           aria-label="Like"
           className="bg-gradient-to-tr from-[#B2B1CF] to-[#18435A]  shadow-lg "
+          onClick={() => router.push("/gallery")}
+
         >
           <div className="w-12 h-12">
             <Plane />
