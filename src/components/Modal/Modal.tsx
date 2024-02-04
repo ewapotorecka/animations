@@ -10,6 +10,14 @@ import {
 } from "@nextui-org/react";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
+import { Cute_Font, Rubik_Scribble} from "next/font/google";
+import { motion } from "framer-motion";
+
+const cute = Cute_Font({ weight: ["400"], subsets: ["latin"]});
+const rubik = Rubik_Scribble({ weight: ["400"], subsets: ["latin"]});
+
+
+
 
 interface CustomModalProps {
   isOpen: boolean;
@@ -25,13 +33,22 @@ export default function CustomModal({
   const [isConfettiActive, setConfettiActive] = useState(false);
   const { width, height } = useWindowSize();
   const [colors, setColors] = useState([
-    "border-4 border-[#09814A]",
-    "border-4 border-[#F90093]",
-    "border-4 border-[#8B80F9]",
-    "border-4 border-[#2AFC98]",
-    "border-4 border-[#340068]",
-    "border-4 border-[#FFD639]",
+    "border-2 border-[#09814A] text-lg bg-transparent",
+    "border-2 border-[#F90093] text-xs bg-transparent",
+    "border-2 border-[#8B80F9] text-base bg-transparent",
+    "border-2 border-[#2AFC98] text-xl bg-transparent",
+    "border-2 border-[#340068] text-xs bg-transparent",
+    "border-2 border-[#FFD639] text-xl bg-transparent",
   ]);
+
+  const glowVariants = {
+    initial: {
+      opacity: 0
+    },
+    hover: {
+      opacity: 1
+    }
+  }
 
   const shuffleColors = () => {
     let shuffledColors = [...colors];
@@ -59,6 +76,7 @@ export default function CustomModal({
         onOpenChange={onOpenChange}
         shadow="lg"
         isDismissable={false}
+        className={cute.className}
         hideCloseButton
         motionProps={{
           variants: {
@@ -91,9 +109,12 @@ export default function CustomModal({
               </ModalHeader>
 
               <ModalFooter className="flex flex-wrap">
+                <motion.div variants={glowVariants}>
                 <Button className={colors[0]} onPress={handleClick}>
+                  
                   ok
                 </Button>
+                </motion.div>
                 <Button className={colors[1]} onPress={onClose}>
                   ok
                 </Button>
