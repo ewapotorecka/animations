@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useRef } from "react";
 import {
   motion,
@@ -9,7 +8,7 @@ import {
   useTransform,
   useMotionValue,
   useVelocity,
-  useAnimationFrame
+  useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 interface ParallaxProps {
@@ -17,16 +16,19 @@ interface ParallaxProps {
   baseVelocity: number;
 }
 
-export default function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
+export default function ParallaxText({
+  children,
+  baseVelocity = 100,
+}: ParallaxProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
-    stiffness: 400
+    stiffness: 400,
   });
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false
+    clamp: false,
   });
 
   /**
@@ -70,5 +72,6 @@ export default function ParallaxText({ children, baseVelocity = 100 }: ParallaxP
         <span>{children} </span>
         <span>{children} </span>
       </motion.div>
-    </div>)
+    </div>
+  );
 }
